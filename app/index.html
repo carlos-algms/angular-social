@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" ng-app="angularTinySocialApp">
+<html class="no-js" ng-app="angularTinySocialApp-mock">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -10,7 +10,8 @@
     <!-- endbuild -->
 
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/plugins.css" />
+    <link rel="stylesheet" href="styles/main.css" />
     <!-- endbuild -->
 
   </head>
@@ -43,7 +44,7 @@
       </nav>
     </header>
 
-    <main class="container-fluid" ui-view></main>
+    <main class="container" ui-view></main>
 
     <div class="hidden">
       <!-- build:js(.) scripts/vendor.js -->
@@ -52,6 +53,7 @@
       <script src="bower_components/angular/angular.js"></script>
       <script src="bower_components/angular-animate/angular-animate.js"></script>
       <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-i18n/angular-locale_pt-br.js"></script>
       <script src="bower_components/angular-mocks/angular-mocks.js"></script>
       <script src="bower_components/angular-resource/angular-resource.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -78,7 +80,17 @@
 
       <!-- controllers -->
       <script src="scripts/controllers/main.ctrl.js"></script>
+
+      <!-- directives -->
+      <script src="scripts/directives/news-feed.directive.js"></script>
+
       <!-- endbuild -->
+
+
+      <!-- MOCKS -->
+      <script src="scripts/mocks/news-feed.mock.js"></script>
+      <script src="scripts/mocks/views.mock.js"></script>
+
     </div>
 </body>
 </html>

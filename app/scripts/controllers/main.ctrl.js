@@ -9,6 +9,9 @@
   ////////////////
 
 
+  /**
+   * @ngInject
+   */
   function MainCtrl(pageConfig) {
 
     pageConfig.setTitle('Página inicial');

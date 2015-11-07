@@ -4,7 +4,7 @@ describe('Service pageConfig:', function () {
 
   beforeEach( module('angularTinySocialApp') );
 
-  beforeEach(inject(function (pageConfig, $rootScope, $rootElement) {
+  beforeEach(inject(function (pageConfig, $rootScope) {
     this.pageConfig = pageConfig;
     this.$rootScope = $rootScope;
     this.$rootScope.$apply();

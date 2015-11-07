@@ -14,6 +14,13 @@
     "bootstrap-sass-official": "^3.2.0",
     "oclazyload": "~1.0.8"
   },
+  "overrides": {
+    "angular-i18n": {
+      "main": [
+        "angular-locale_pt-br.js"
+      ]
+    }
+  },
   "appPath": "app",
   "moduleName": "angularTinySocialApp"
 }

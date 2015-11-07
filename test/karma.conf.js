@@ -14,7 +14,7 @@ module.exports = function(config) {
     basePath: '../',
 
     // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine', 'mocha', 'chai'],
+    frameworks: ['jasmine-ajax', 'jasmine', 'mocha', 'chai'],
 
     // list of files / patterns to load in the browser
     files: [
@@ -23,6 +23,7 @@ module.exports = function(config) {
       'bower_components/angular/angular.js',
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-cookies/angular-cookies.js',
+      'bower_components/angular-i18n/angular-locale_pt-br.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
@@ -32,12 +33,15 @@ module.exports = function(config) {
 
 
       'app/scripts/**/*.js',
+      'app/views/**/*.html',
+
       'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude
     exclude: [
+      //'app/scripts/mocks/**/*.js'
     ],
 
     // web server port
@@ -59,6 +63,7 @@ module.exports = function(config) {
     plugins: [
       'karma-phantomjs-launcher',
       'karma-jasmine',
+      'karma-jasmine-ajax',
       'karma-mocha',
       'karma-chai'
     ],

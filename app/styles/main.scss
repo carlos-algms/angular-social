@@ -1,9 +1,11 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
-// bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-// endbower
+body {
+  background: #e9eaed;
+}
 
-body .navbar {
+
+.navbar {
   border-radius: 0;
 }
+
+@import "templates/_news-feed";

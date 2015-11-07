@@ -6,7 +6,7 @@
 
 
   /**
-   * @ngInclude
+   * @ngInject
    */
   function mainRoute($stateProvider, $urlRouterProvider) {
 

@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       compass: {
-        files: ['<%= appConfig.app %>/styles/{,*/}*.{scss,sass}'],
+        files: ['<%= appConfig.app %>/styles/**/*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
       },
       gruntfile: {
