@@ -3,5 +3,7 @@
 angular.module('angularTinySocialApp', [
   'ngAnimate',
   'ngCookies',
-  'ngResource'
+  'ngResource',
+  'ui.router',
+  'oc.lazyLoad'
 ]);

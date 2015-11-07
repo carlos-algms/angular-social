@@ -163,6 +163,7 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the app
     wiredep: {
       app: {
+        devDependencies: true,
         src: ['<%= appConfig.app %>/index.html'],
         ignorePath:  /\.\.\//
       },
@@ -183,6 +184,7 @@ module.exports = function (grunt) {
           }
       },
       sass: {
+        devDependencies: true,
         src: ['<%= appConfig.app %>/styles/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
