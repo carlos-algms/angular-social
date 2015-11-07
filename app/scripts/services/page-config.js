@@ -1,4 +1,4 @@
-(function (angular) {
+(function () {
   'use strict';
 
   angular.module('angularTinySocialApp')
@@ -23,6 +23,7 @@
       this.description = '';
     }
 
+
     function _extendPageConfigs() {
 
       PageConfig.prototype.setTitle = function (title) {
@@ -36,4 +37,4 @@
     }
   }
 
-})(angular);
+})();

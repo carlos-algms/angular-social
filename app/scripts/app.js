@@ -1,8 +1,7 @@
 'use strict';
 
-angular
-  .module('angularTinySocialApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource'
-  ]);
+angular.module('angularTinySocialApp', [
+  'ngAnimate',
+  'ngCookies',
+  'ngResource'
+]);
