@@ -393,5 +393,7 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
+  grunt.registerTask('deploy', ['shell:deployHeroku']);
+
   grunt.registerTask('default', [ ]);
 };
