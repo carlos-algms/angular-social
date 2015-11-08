@@ -1,0 +1,39 @@
+
+<form name="form" class="form panel panel-default" novalidate ng-model-options="{ debounce: 500 }">
+  <header class="panel-heading">
+    <h1 class="panel-title">Atualizar Status</h1>
+  </header>
+
+  <div class="panel-body">
+
+    <div class="form-group">
+      <textarea class="form-control"
+                rows="5"
+                placeholder="No que está pensando?..."
+                name="text"
+                required
+                ng-model="updateStatus.formModel.text"></textarea>
+
+      <div ng-show="form.$submitted || form.$dirty">
+        <span ng-show="form.text.$error.required">É obrigatório digitar uma atualização.</span>
+      </div>
+    </div>
+
+    <div ng-show="updateStatus.failSendStatus" class="alert alert-danger alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <i class="glyphicon glyphicon-exclamation-sign"></i>
+      <p>Falha ao enviar a atualização de status.</p>
+    </div>
+
+  </div>
+
+  <footer class="panel-footer">
+    <button type="submit" class="btn btn-primary" ng-click="updateStatus.send(form)">
+      <i class="glyphicon glyphicon-save"></i>
+      Enviar
+    </button>
+  </footer>
+</form>

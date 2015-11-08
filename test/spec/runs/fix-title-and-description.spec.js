@@ -17,7 +17,7 @@ describe('Service pageConfig:', function () {
     this.$rootScope.$apply();
 
     this.pageConfig.title.should.equal(title);
-    $("head title").html().should.equal(title);
+    $('head title').html().should.equal(title);
   });
 
   it('pageConfig.setDescription() should change the current page meta description', function () {
