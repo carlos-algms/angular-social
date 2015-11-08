@@ -68,9 +68,10 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
-              connect.static('.tmp'),
-              connect().use( '/bower_components', connect.static('./bower_components') ),
-              connect().use( '/app/styles', connect.static('./app/styles') ),
+              connect.static('.tmp/'),
+              connect().use( '/bower_components/', connect.static('./bower_components/') ),
+              connect().use( '/app/styles/', connect.static('./app/styles/') ),
+              connect().use('/fonts/', connect.static('./bower_components/bootstrap-sass/assets/fonts/')),
               connect.static(appConfig.app)
             ];
           }
@@ -84,6 +85,7 @@ module.exports = function (grunt) {
               connect.static('.tmp'),
               connect.static('test'),
               connect().use( '/bower_components', connect.static('./bower_components') ),
+              connect().use('/fonts/', connect.static('./bower_components/bootstrap-sass/assets/fonts/')),
               connect.static(appConfig.app)
             ];
           }
@@ -92,7 +94,8 @@ module.exports = function (grunt) {
       dist: {
         options: {
           open: true,
-          base: '<%= appConfig.dist %>'
+          base: '<%= appConfig.dist %>',
+          livereload: false
         }
       }
     },
@@ -306,6 +309,7 @@ module.exports = function (grunt) {
               '*.{ico,png,txt}',
               '.htaccess',
               '*.html',
+              '*.php',
               'views/{,*/}*.html',
               'images/{,*/}*.{webp}',
               'styles/fonts/{,*/}*.*'
@@ -319,8 +323,8 @@ module.exports = function (grunt) {
           },
           {
             expand: true,
-            cwd: '.',
-            src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
+            cwd: 'bower_components/bootstrap-sass/assets/',
+            src: 'fonts/bootstrap/*',
             dest: '<%= appConfig.dist %>'
           }
         ]
