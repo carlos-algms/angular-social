@@ -9,11 +9,11 @@
   /**
    * @ngInject
    */
-  function newsFeedDirective($resource, $rootScope) {
+  function newsFeedDirective($resource) {
 
     return {
       restrict: 'E',
-      templateUrl: 'views/news-feed.html',
+      templateUrl: 'views/directives/news-feed.html',
       link: _link
     };
 

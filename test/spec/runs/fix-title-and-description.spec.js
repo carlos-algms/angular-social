@@ -7,7 +7,6 @@ describe('Service pageConfig:', function () {
   beforeEach(inject(function (pageConfig, $rootScope) {
     this.pageConfig = pageConfig;
     this.$rootScope = $rootScope;
-    this.$rootScope.$apply();
   }));
 
   it('pageConfig.setTitle() should change the current page title', function () {

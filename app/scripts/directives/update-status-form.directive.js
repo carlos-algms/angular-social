@@ -13,7 +13,7 @@
 
     return {
       restrict: 'E',
-      templateUrl: 'views/update-status-form.html',
+      templateUrl: 'views/directives/update-status-form.html',
       controller: UpdateStatusFormCtrl,
       controllerAs: 'updateStatus'
     };

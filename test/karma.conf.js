@@ -38,8 +38,17 @@ module.exports = function(config) {
 
     // list of files / patterns to exclude
     exclude: [
-      //'app/scripts/mocks/**/*.js'
+      'app/scripts/mocks/**/*.js'
     ],
+
+    preprocessors: {
+      'app/views/directives/**/*.html': 'ng-html2js'
+    },
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'app/',
+      moduleName: 'angularTinySocialApp'
+    },
 
     // web server port
     port: 8080,
@@ -62,7 +71,8 @@ module.exports = function(config) {
       'karma-jasmine',
       'karma-jasmine-ajax',
       'karma-mocha',
-      'karma-chai'
+      'karma-chai',
+      'karma-ng-html2js-preprocessor'
     ],
 
     // Continuous Integration mode

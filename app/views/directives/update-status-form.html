@@ -14,21 +14,13 @@
                 required
                 ng-model="updateStatus.formModel.text"></textarea>
 
-      <!-- TODO substituir por diretiva -->
-      <div ng-show="form.$submitted || form.$dirty">
-        <span ng-show="form.text.$error.required">É obrigatório digitar uma atualização.</span>
-      </div>
     </div>
 
-    <!-- TODO substituir por diretiva -->
-    <div ng-show="updateStatus.failSendStatus" class="alert alert-danger alert-dismissible">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-
-      <i class="glyphicon glyphicon-exclamation-sign"></i>
-      <p>Falha ao enviar a atualização de status.</p>
+    <div ng-if="form.$submitted || form.$dirty">
+      <alert-panel ng-if="form.text.$error.required" data-message="É obrigatório digitar uma atualização." data-dismissible="false"></alert-panel>
     </div>
+
+    <alert-panel ng-if="updateStatus.failSendStatus" data-message="Falha ao enviar a atualização de status."></alert-panel>
 
   </div>
 

@@ -4,10 +4,9 @@ describe('Directive updateStatusForm: ', function () {
 
   beforeEach( module('angularTinySocialApp') );
 
-  beforeEach(inject(function ($rootScope, $httpBackend, $compile, $templateCache) {
+  beforeEach(inject(function ($rootScope, $httpBackend, $timeout, $compile) {
     this.$httpBackend = $httpBackend;
-
-    $templateCache.put('views/update-status-form.html', '<form name="form"><textarea name="text" required ng-model="updateStatus.formModel.text"></textarea></form>');
+    this.$timeout = $timeout;
 
     this.$scope = $rootScope.$new();
     this.$scope.feeds = [];
@@ -34,6 +33,7 @@ describe('Directive updateStatusForm: ', function () {
 
   it('Insert the POST response into the list of feeds and clear the data', function () {
     this.$scope.form.text.$setViewValue('Testing');
+    this.$timeout.flush(); //needed because the form has debounce options
 
     var spy = jasmine.createSpy('newsFeed-top-spy');
     this.$scope.$on('newsFeed-top', spy);
