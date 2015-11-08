@@ -6,9 +6,6 @@ angular.module('angularTinySocialApp-mock', [
 ]);
 
 angular.module('angularTinySocialApp', [
-  'ngAnimate',
-  'ngCookies',
   'ngResource',
-  'ui.router',
-  'oc.lazyLoad'
+  'ui.router'
 ]);

@@ -23,6 +23,7 @@
 
     function _link($scope) {
       $scope.feeds = [];
+      //TODO add events do insert feeds
 
       $resource('/api/feed').get().$promise
         .then(_updateFeeds)

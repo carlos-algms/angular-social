@@ -56,6 +56,7 @@
 
 
       function _prependStatuOnView(res) {
+        //TODO dispatch event
         if( ! $scope.feeds ) {
           $scope.feeds = [];
         }

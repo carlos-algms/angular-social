@@ -5,14 +5,11 @@
   "devDependencies": {
     "jquery": "~2.1.4",
     "angular": "~1.4.0",
-    "angular-animate": "~1.4.0",
-    "angular-cookies": "~1.4.0",
     "angular-i18n": "~1.4.7",
     "angular-mocks": "~1.4.0",
     "angular-resource": "~1.4.0",
     "angular-ui-router": "~0.2.15",
-    "bootstrap-sass-official": "^3.2.0",
-    "oclazyload": "~1.0.8"
+    "bootstrap-sass": "~3.3.5"
   },
   "overrides": {
     "angular-i18n": {

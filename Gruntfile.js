@@ -27,7 +27,7 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['<%= appConfig.app %>/scripts/**/*.js'],
+        files: ['<%= appConfig.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       compass: {
-        files: ['<%= appConfig.app %>/styles/**/*.{scss,sass}'],
+        files: ['<%= appConfig.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
       },
       gruntfile: {
@@ -50,8 +50,7 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= appConfig.app %>/{,*/}*.html',
-          '.tmp/styles/{,*/}*.css',
-          '<%= appConfig.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          '.tmp/styles/{,*/}*.css'
         ]
       }
     },
@@ -134,10 +133,9 @@ module.exports = function (grunt) {
     },
 
     // Add vendor prefixed styles
-    //TODO mudar para postcss
     autoprefixer: {
       options: {
-        browsers: ['last 1 version']
+        browsers: ['last 3 version']
       },
       server: {
         options: {
