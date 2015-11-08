@@ -337,18 +337,19 @@ module.exports = function (grunt) {
       }
     },
 
-    // Run some tasks in parallel to speed up the build process
-    concurrent: {
-      dist: [
-        'compass:dist'
-      ]
-    },
 
     // Test settings
     karma: {
       unit: {
         configFile: 'test/karma.conf.js',
         singleRun: false
+      }
+    },
+
+
+    shell: {
+      deployHeroku: {
+        command: 'git subtree push --prefix dist/ heroku master'
       }
     }
   });
