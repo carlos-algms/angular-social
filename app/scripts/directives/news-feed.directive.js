@@ -21,7 +21,7 @@
     ////////////////////////
 
 
-    function _link($scope, $element) {
+    function _link($scope) {
       $scope.feeds = [];
 
       $resource('/api/feed').get().$promise

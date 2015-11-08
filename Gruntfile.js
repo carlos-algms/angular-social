@@ -141,7 +141,7 @@ module.exports = function (grunt) {
       },
       server: {
         options: {
-          map: true,
+          map: false,
         },
         files: [{
           expand: true,
@@ -214,7 +214,7 @@ module.exports = function (grunt) {
       },
       server: {
         options: {
-          sourcemap: true
+          sourcemap: false
         }
       }
     },

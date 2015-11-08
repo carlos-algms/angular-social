@@ -1,0 +1,35 @@
+
+
+<div class="row friends-list">
+  <div class="col-sm-12">
+
+    <h1>Lista de amigos</h1>
+
+    <div ng-if="friends.failRequestFriends" class="alert alert-danger alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <i class="glyphicon glyphicon-exclamation-sign"></i>
+      Falha ao carregar a lista de amigos.
+    </div>
+
+    <ul class="row list-group">
+
+      <li class="col-xs-12 col-sm-6 col-md-4" ng-repeat="friend in friends.friends track by $index">
+        <div class="panel panel-default ">
+          <div class="panel-body">
+            <picture>
+              <img ng-src="{{ friend.picture }}" />
+            </picture>
+            <div class="panel-info">
+              <strong>{{ friend.name }}</strong>
+            </div>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</div>
