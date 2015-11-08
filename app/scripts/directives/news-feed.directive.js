@@ -9,7 +9,7 @@
   /**
    * @ngInject
    */
-  function newsFeedDirective($resource) {
+  function newsFeedDirective($resource, $rootScope) {
 
     return {
       restrict: 'E',
@@ -23,16 +23,43 @@
 
     function _link($scope) {
       $scope.feeds = [];
-      //TODO add events do insert feeds
 
+      _addEventsToFillFeedList($scope);
+      _requestFeeds($scope);
+    }
+
+
+    function _addEventsToFillFeedList($scope) {
+      $scope.$on('newsFeed-top', _insertFeedsOnTop);
+      $scope.$on('newsFeed-bottom', _insertFeedsAtBottom);
+
+      ////////////////////
+
+
+    }
+
+
+    function _insertFeedsOnTop(event, data) {
+      event.stopPropagation();
+      Array.prototype.unshift.apply(event.currentScope.feeds, data);
+    }
+
+    function _insertFeedsAtBottom(event, data) {
+      event.stopPropagation();
+      Array.prototype.push.apply(event.currentScope.feeds, data);
+    }
+
+
+
+    function _requestFeeds($scope) {
       $resource('/api/feed').get().$promise
         .then(_updateFeeds)
         .catch(_notifyUser);
 
-      ///////////////////////////////////
+      ///////////////////////
 
       function _updateFeeds(res) {
-        $scope.feeds = res.data || [];
+        $scope.$emit('newsFeed-bottom', res.data || []);
       }
 
       function _notifyUser() {

@@ -56,12 +56,7 @@
 
 
       function _prependStatuOnView(res) {
-        //TODO dispatch event
-        if( ! $scope.feeds ) {
-          $scope.feeds = [];
-        }
-
-        $scope.feeds.unshift(res);
+        $scope.$emit('newsFeed-top', [res]);
         _resetForm($scope.form);
       }
 

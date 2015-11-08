@@ -31,14 +31,18 @@ describe('Directive updateStatusForm: ', function () {
     this.controller.failSendStatus.should.equal(false);
   });
 
+
   it('Insert the POST response into the list of feeds and clear the data', function () {
     this.$scope.form.text.$setViewValue('Testing');
+
+    var spy = jasmine.createSpy('newsFeed-top-spy');
+    this.$scope.$on('newsFeed-top', spy);
 
     this.$httpBackend.expectPOST('/api/status').respond(200, {});
     this.controller.send(this.$scope.form);
     this.$httpBackend.flush();
 
-    this.$scope.feeds.length.should.equal(1);
+    expect(spy).toHaveBeenCalled();
     this.controller.formModel.text.should.equal('');
     this.controller.failSendStatus.should.equal(false);
     this.$scope.form.$pristine.should.equal(true);
